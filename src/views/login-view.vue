@@ -37,7 +37,4 @@ button
   padding: 10px
   border-radius: 5px
   outline: 1px solid rgba(255, 255, 255, 0.5)
-
-  svg
-    margin-right: 10px
 </style>

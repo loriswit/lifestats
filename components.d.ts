@@ -5,8 +5,14 @@ import "@vue/runtime-core"
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
+    IconArrowLeft: typeof import("mdue")["ArrowLeft"]
+    IconContentSave: typeof import("mdue")["ContentSave"]
     IconGoogle: typeof import("mdue")["Google"]
     IconLogout: typeof import("mdue")["Logout"]
+    IconMenu: typeof import("mdue")["Menu"]
+    IconPlaylistPlus: typeof import("mdue")["PlaylistPlus"]
+    IconSave: typeof import("mdue")["Save"]
+    MainHeader: typeof import("./src/components/main-header.vue")["default"]
     RouterLink: typeof import("vue-router")["RouterLink"]
     RouterView: typeof import("vue-router")["RouterView"]
   }

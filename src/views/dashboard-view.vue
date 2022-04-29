@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import { db } from "@/db"
 import { onMounted } from "vue"
+import type { Stat } from "@/types/stat"
 
-interface Stat {
-  id: number
-  title: string
-  type: string
-  count: number
-}
+type StatWithCount = Stat & { count: number }
 
-let stats = $ref([] as Stat[])
+let stats = $ref([] as StatWithCount[])
 onMounted(async () => {
   let { data, error } = await db.from("stats").select()
   if (error) throw error
@@ -25,7 +21,7 @@ onMounted(async () => {
   }
 })
 
-async function newOccurrence(stat: Stat) {
+async function newOccurrence(stat: StatWithCount) {
   const { error } = await db
     .from("occurrences")
     .insert([{ stat_id: stat.id }])

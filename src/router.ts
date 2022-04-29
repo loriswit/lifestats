@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
+import { useUserStore } from "@/stores/user"
 import LoginView from "./views/login-view.vue"
 import DashboardView from "./views/dashboard-view.vue"
-import { useUserStore } from "@/stores/user"
+import StatEditor from "./views/stat-editor.vue"
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +17,11 @@ const router = createRouter({
             name: "login",
             component: LoginView,
             meta: { visitor: true },
+        },
+        {
+            path: "/stats/new",
+            name: "new-stat",
+            component: StatEditor,
         },
     ],
 })
