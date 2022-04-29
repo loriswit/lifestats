@@ -1,0 +1,10 @@
+# node dependencies
+node_modules/
+
+# build files
+dist/
+
+# IDE config
+.idea/
+.vscode/*
+!.vscode/extensions.json
